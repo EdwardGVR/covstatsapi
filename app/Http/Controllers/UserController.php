@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\UserTest;
 use App\Http\Requests\CreateUserRequest;
+use App\Http\Requests\UpdateUserRequest;
 
 class UserController extends Controller
 {
@@ -43,18 +44,18 @@ class UserController extends Controller
         return UserTest::where("id", $id)->get();
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
 
     // http PUT
-    public function update(Request $request, $id)
+    public function update(UpdateUserRequest $request, $id)
     {
-        //
+        // Cambiamos Request por el Request que creamos
+        $input = $request->all();
+        UserTest::where('id', $id)->update($input);
+
+        return response()->json([
+            'res' => true,
+            'message' => "Registro actualizado"
+        ], 200);
     }
 
     /**
@@ -63,8 +64,15 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+     // http DELETE
     public function destroy($id)
     {
-        //
+        UserTest::destroy($id);
+
+        return response()->json([
+            'res' => true,
+            'message' => "Registro eliminado"
+        ], 200);
     }
 }

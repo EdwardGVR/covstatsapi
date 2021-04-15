@@ -27,7 +27,8 @@ class CreateUserRequest extends FormRequest
         return [
             // validaciones a cumplirse
             'name' => 'required | min:5 | max:100',
-            'password' => 'required | min:5'
+            'password' => 'required | min:5',
+            'email' => 'unique:users,email'
         ];
     }
 }
