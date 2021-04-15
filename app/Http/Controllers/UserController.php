@@ -25,9 +25,15 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+    // http POST
     public function store(Request $request)
     {
-        //
+        $input = $request->all();
+        UserTest::create($input);
+        return response->json([
+            'res' => true,
+            'message' => "Registro creado"
+        ], 200);
     }
 
     /**
