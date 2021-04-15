@@ -38,7 +38,7 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+        return UserTest::where("id", $id)->get();
     }
 
     /**
