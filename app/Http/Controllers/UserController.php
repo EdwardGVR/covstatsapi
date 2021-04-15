@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\UserTest;
+use App\Http\Requests\CreateUserRequest;
 
 class UserController extends Controller
 {
@@ -21,7 +22,7 @@ class UserController extends Controller
 
  
     // http POST
-    public function store(Request $request)
+    public function store(CreateUserRequest $request)
     {
         $input = $request->all();
         UserTest::create($input);
@@ -49,6 +50,8 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+    // http PUT
     public function update(Request $request, $id)
     {
         //
