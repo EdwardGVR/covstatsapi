@@ -19,18 +19,13 @@ class UserController extends Controller
         return UserTest::all();
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+ 
     // http POST
     public function store(Request $request)
     {
         $input = $request->all();
         UserTest::create($input);
-        return response->json([
+        return response()->json([
             'res' => true,
             'message' => "Registro creado"
         ], 200);
