@@ -16,12 +16,36 @@ class ZonasSeeder extends Seeder
      */
     public function run()
     {
-        Zonas::insert([
-            ['zona' => 'Occidental'],
-            ['zona' => 'Central'],
-            ['zona' => 'Paracentral'],
-            ['zona' => 'Oriental'],
-        ]);
+        $zonas = [
+            [
+                "zona" => "Occidental"
+            ],
+            [
+                "zona" => "Central"
+            ],
+            [
+                "zona" => "Paracentral"
+            ],
+            [
+                "zona" => "Oriental"
+            ]
+        ];
+
+        foreach ($zonas as $zona) {
+            Zonas::create($zona);
+        }
+
+        // Zonas::create(['zona' => 'Occidental']);
+        // Zonas::create(['zona' => 'Occidental']);
+        // Zonas::create(['zona' => 'Occidental']);
+        // Zonas::create(['zona' => 'Occidental']);
+
+        // Zonas::insert([
+        //     ['zona' => 'Occidental'],
+        //     ['zona' => 'Central'],
+        //     ['zona' => 'Paracentral'],
+        //     ['zona' => 'Oriental'],
+        // ]);
 
         // DB::table('zonas')->insert([
         //     [
