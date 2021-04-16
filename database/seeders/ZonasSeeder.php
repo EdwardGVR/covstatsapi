@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Illuminate\Database;
 use Illuminate\Support\Facades\DB;
+use App\Models\Zonas;
 
 class ZonasSeeder extends Seeder
 {
@@ -15,19 +16,26 @@ class ZonasSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('zonas')->insert([
-            [
-                "zona" => "Occidental"
-            ],
-            [
-                "zona" => "Central"
-            ],
-            [
-                "zona" => "Paracentral"
-            ],
-            [
-                "zona" => "Oriental"
-            ]
+        Zonas::insert([
+            ['zona' => 'Occidental'],
+            ['zona' => 'Central'],
+            ['zona' => 'Paracentral'],
+            ['zona' => 'Oriental'],
         ]);
+
+        // DB::table('zonas')->insert([
+        //     [
+        //         "zona" => "Occidental"
+        //     ],
+        //     [
+        //         "zona" => "Central"
+        //     ],
+        //     [
+        //         "zona" => "Paracentral"
+        //     ],
+        //     [
+        //         "zona" => "Oriental"
+        //     ]
+        // ]);
     }
 }
