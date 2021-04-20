@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Categorias;
 
-class DepartamentosController extends Controller
+class CategoriasController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +14,7 @@ class DepartamentosController extends Controller
      */
     public function index()
     {
-        //
+        return Categorias::all();
     }
 
     /**
@@ -35,7 +36,7 @@ class DepartamentosController extends Controller
      */
     public function show($id)
     {
-        //
+        return Categorias::where('id', $id)->get();
     }
 
     /**

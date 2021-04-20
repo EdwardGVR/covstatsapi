@@ -15,11 +15,12 @@ class CreateUsuariosTable extends Migration
     {
         Schema::create('usuarios', function (Blueprint $table) {
             //
-            $table->increments('id');
+            $table->id();
             $table->string('nombres');
             $table->string('apellidos');
             $table->string('email');
             $table->string('dui');
+            $table->foreignId('rol_id')->constrained('roles');
             $table->string('password');
         });
     }

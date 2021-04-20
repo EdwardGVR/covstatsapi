@@ -19,3 +19,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::ApiResource("/usuarios", "UserController");
+
+Route::ApiResource("/posts", "PostController");
+
+Route::ApiResource("/municipios", "MunicipiosController");
+Route::get("municipios/bydpto/{id}", "MunicipiosController@showByDpto");
+
+Route::ApiResource("/categorias", "CategoriasController");

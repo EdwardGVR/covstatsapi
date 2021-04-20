@@ -18,5 +18,8 @@ class DatabaseSeeder extends Seeder
         // $this->call(usersSeeder::class);
         $this->call(ZonasSeeder::class);
         $this->call(DepartamentosSeeder::class);
+        $this->call(MunicipiosSeeder::class);
+        $this->call(RolesSeeder::class);
+        $this->call(CategoriasSeeder::class);
     }
 }
