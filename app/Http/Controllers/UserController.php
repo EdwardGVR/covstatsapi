@@ -35,7 +35,7 @@ class UserController extends Controller
         $nombres = $request->input('nombres');
         $apellidos = $request->input('apellidos');
         $email = $request->input('email');
-        $rol_id = $request->input('rol_id');
+        $rol_id = 1;
         $municipio_id = $request->input('municipio_id');
         $password = $request->input('password');
 
