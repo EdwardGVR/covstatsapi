@@ -21,6 +21,7 @@ class CreateUsuariosTable extends Migration
             $table->string('email');
             $table->string('dui');
             $table->foreignId('rol_id')->constrained('roles');
+            $table->foreignId('municipios_id')->constrained('municipios');
             $table->string('password');
         });
     }
