@@ -24,6 +24,9 @@ Route::ApiResource("/posts", "PostController");
 
 Route::ApiResource("/zonas", "ZonasController");
 
+Route::ApiResource("/departamentos", "DepartamentosController");
+Route::get("/departamentos/byzona/{id}", "DepartamentosController@getDptosByZona");
+
 Route::ApiResource("/municipios", "MunicipiosController");
 Route::get("municipios/bydpto/{id}", "MunicipiosController@showByDpto");
 

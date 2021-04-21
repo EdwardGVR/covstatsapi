@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Departamentos as D;
 
 class DepartamentosController extends Controller
 {
@@ -13,7 +14,7 @@ class DepartamentosController extends Controller
      */
     public function index()
     {
-        //
+        return D::all();
     }
 
     /**
@@ -35,7 +36,11 @@ class DepartamentosController extends Controller
      */
     public function show($id)
     {
-        //
+        return D::where('id', $id)->get();
+    }
+
+    public function getDptosByZona ($idZona) {
+        return D::where('zona_id', $idZona)->get();
     }
 
     /**

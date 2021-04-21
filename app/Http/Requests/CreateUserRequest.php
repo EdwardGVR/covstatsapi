@@ -26,9 +26,22 @@ class CreateUserRequest extends FormRequest
     {
         return [
             // validaciones a cumplirse
-            'name' => 'required | min:5 | max:100',
+            'nombres' => 'required | min:5 | max:100',
+            'apellidos' => 'required | min:5 | max:100',
             'password' => 'required | min:5',
-            'email' => 'unique:users,email'
+            'email' => 'unique:usuarios,email',
+            'municipio_id' => 'required'
+        ];
+    }
+
+    public function messages () {
+        return [
+            'nombres.required' => 'El campo nombres es requerido',
+            'apellidos.required' => 'El campo apellidos es requerido',
+            'password.required' => 'El campo contraseña es requerido',
+            'password.min' => 'La contraseña debe tener al menos 5 caracteres',
+            'email.unique' => 'El email ya está en uso',
+            'email.required' => 'El campo email es requerido'
         ];
     }
 }
