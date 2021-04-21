@@ -72,6 +72,20 @@ class UserController extends Controller
         }
     }
 
+    public function logout () {
+        $user = auth()->user();
+        $user->tokens->each(function ($token, $key){
+            $token->delete();
+        });
+
+        $user->save();
+
+        return response()->json([
+            'res' => true,
+            'message' => 'Ha cerrado sesion'
+        ], 200);
+    }
+
     /**
      * Display the specified resource.
      *

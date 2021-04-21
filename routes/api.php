@@ -20,6 +20,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::group(['middleware' => 'auth:api'], function () {
     Route::get("/departamentos/byzona/{id}", "DepartamentosController@getDptosByZona");
+    Route::post("/logout", "UserController@logout");
 });
 
 Route::post("/login", "UserController@login");
