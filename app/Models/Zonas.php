@@ -10,8 +10,6 @@ class Zonas extends Model
     use HasFactory;
 
     protected $fillable = [
-        "zona",
-        "created_at",
-        "updated_at"
+        "zona"
     ];
 }
