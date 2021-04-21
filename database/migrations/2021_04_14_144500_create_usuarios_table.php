@@ -20,7 +20,7 @@ class CreateUsuariosTable extends Migration
             $table->string('apellidos');
             $table->string('email');
             $table->foreignId('rol_id')->constrained('roles');
-            $table->foreignId('municipios_id')->constrained('municipios');
+            $table->foreignId('municipio_id')->constrained('municipios');
             $table->string('password');
         });
     }
