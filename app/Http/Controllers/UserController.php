@@ -53,6 +53,25 @@ class UserController extends Controller
         ], 200);
     }
 
+    public function login (Request $request) {
+        $user = Usuarios::whereEmail($request->email)->first();
+
+        if (!is_null($user) && $request->password == $user->password) {
+            $token = $user->createToken('covstatsapi')->accessToken;
+            
+            return response()->json([
+                'res' => true,
+                'token' => $token,
+                'message' => 'Ingreso correcto'
+            ], 200);
+        } else {
+            return response()->json([
+                'res' => false,
+                'message' => 'Acceso incorrecto'
+            ], 200);
+        }
+    }
+
     /**
      * Display the specified resource.
      *
