@@ -53,19 +53,19 @@ class PruebasController extends Controller
         return P::where('id', $id)->get();
     }
 
-    public function getByUser () {
+    public function getByUser ($id) {
         return P::where('usuario_id', $id)->get();
     }
 
-    public function getByMunicipio () {
+    public function getByMunicipio ($id) {
         return P::where('municipio_id', $id)->get();
     }
 
-    public function getByTipo () {
+    public function getByTipo ($id) {
         return P::where('tipo_id', $id)->get();
     }
 
-    public function getByResultado () {
+    public function getByResultado ($id) {
         return P::where('resultado_id', $id)->get();
     }
 
