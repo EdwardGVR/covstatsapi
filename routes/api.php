@@ -46,3 +46,9 @@ Route::ApiResource("/categorias", "CategoriasController");
 Route::ApiResource("/resultadospruebas", "ResultadosPruebasController");
 
 Route::ApiResource("/tipospruebas", "TiposPruebasController");
+
+Route::ApiResource("/pruebas", "PruebasController");
+Route::get("/pruebas/byuser/{id}", "PruebasController@getByUser");
+Route::get("/pruebas/bymunicipio/{id}", "PruebasController@getByMunicipio");
+Route::get("/pruebas/bytipo/{id}", "PruebasController@getByTipo");
+Route::get("/pruebas/byresultado/{id}", "PruebasController@getByResultado");

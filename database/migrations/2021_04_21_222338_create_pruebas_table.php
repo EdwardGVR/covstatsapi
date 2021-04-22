@@ -15,6 +15,10 @@ class CreatePruebasTable extends Migration
     {
         Schema::create('pruebas', function (Blueprint $table) {
             $table->id();
+            $table->foreign('usuario_id')->constrained('usuarios');
+            $table->foreign('municipio_id')->constrained('municipios');
+            $table->foreign('tipo_id')->constrained('tipos_pruebas');
+            $table->foreign('resultado_id')->constrained('resultados_pruebas');
             $table->timestamps();
         });
     }
