@@ -15,6 +15,8 @@ class CreateResultadosPruebasTable extends Migration
     {
         Schema::create('resultados_pruebas', function (Blueprint $table) {
             $table->id();
+            $table->string('resultado');
+            $table->string('descripcion');
             $table->timestamps();
         });
     }
