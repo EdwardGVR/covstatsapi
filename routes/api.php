@@ -19,7 +19,11 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::group(['middleware' => 'auth:api'], function () {
-    Route::get("/departamentos/byzona/{id}", "DepartamentosController@getDptosByZona");
+    // Para acceder a estar rutas, hay que especificar los headers
+    // Accept Application/json
+    // Authorization Bearer [token]
+
+    // Route::get("/departamentos/byzona/{id}", "DepartamentosController@getDptosByZona");
     Route::post("/logout", "UserController@logout");
 });
 
@@ -32,7 +36,7 @@ Route::ApiResource("/posts", "PostController");
 Route::ApiResource("/zonas", "ZonasController");
 
 Route::ApiResource("/departamentos", "DepartamentosController");
-// Route::get("/departamentos/byzona/{id}", "DepartamentosController@getDptosByZona");
+Route::get("/departamentos/byzona/{id}", "DepartamentosController@getDptosByZona");
 
 Route::ApiResource("/municipios", "MunicipiosController");
 Route::get("municipios/bydpto/{id}", "MunicipiosController@showByDpto");
