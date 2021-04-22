@@ -55,7 +55,12 @@ class PruebasController extends Controller
 
     public function getByUser ($id) {
         // return P::where('usuario_id', $id)->get();
-        return P::with(['tipo:id,tipo', 'resultado:id,resultado', 'municipio:id,municipio'])->get();
+        
+        // return P::with(['tipo:id,tipo', 'resultado:id,resultado', 'municipio:id,municipio'])->get();
+
+        return P::with(['tipo:id,tipo', 'resultado:id,resultado', 'municipio:id,municipio'])
+            ->where('usuario_id', '=', $id)
+            ->get();
     }
 
     public function getByMunicipio ($id) {
@@ -79,7 +84,19 @@ class PruebasController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $municipio_id = $request->input('municipio_id');
+        $tipo_id = $request->input('tipo_id');
+        $resultado_id = $request->input('resultado_id');
+
+        P::where('id', $id)->update([
+            "municipio_id" => $municipio_id,
+            "tipo_id" => $tipo_id,
+            "resultado_id" => $resultado_id,
+        ]);
+
+        return response()->json([
+            "msg" => "Prueba modificada"
+        ], 200);
     }
 
     /**
