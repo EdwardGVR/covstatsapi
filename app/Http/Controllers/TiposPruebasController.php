@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\TiposPruebas as T;
 
-class TiposPruebas extends Controller
+class TiposPruebasController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +14,7 @@ class TiposPruebas extends Controller
      */
     public function index()
     {
-        //
+        return T::all();
     }
 
     /**
@@ -35,7 +36,7 @@ class TiposPruebas extends Controller
      */
     public function show($id)
     {
-        //
+        return T::where('id', $id)->get();
     }
 
     /**

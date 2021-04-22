@@ -15,6 +15,8 @@ class CreateTiposPruebasTable extends Migration
     {
         Schema::create('tipos_pruebas', function (Blueprint $table) {
             $table->id();
+            $table->string('tipo');
+            $table->string('descripcion');
             $table->timestamps();
         });
     }

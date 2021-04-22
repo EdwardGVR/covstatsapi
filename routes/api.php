@@ -44,3 +44,5 @@ Route::get("municipios/bydpto/{id}", "MunicipiosController@showByDpto");
 Route::ApiResource("/categorias", "CategoriasController");
 
 Route::ApiResource("/resultadospruebas", "ResultadosPruebasController");
+
+Route::ApiResource("/tipospruebas", "TiposPruebasController");

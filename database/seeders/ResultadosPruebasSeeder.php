@@ -17,11 +17,11 @@ class ResultadosPruebasSeeder extends Seeder
         $resultados = [
             [
                 "resultado" => "Positivo",
-                "descripcion" => "El resultado de la prueba ha sido positivo"
+                "descripcion" => "El resultado de la prueba ha sido positivo, indicando que tiene la enfermedad."
             ],
             [
                 "resultado" => "Negativo",
-                "descripcion" => "El resultado de la prueba ha sido negativo"
+                "descripcion" => "El resultado de la prueba ha sido negativo, sin embargo, pero se deben considerar otros factores, como el momento en que se realiza la prueba."
             ]
         ];
 
