@@ -52,3 +52,11 @@ Route::get("/pruebas/byuser/{id}", "PruebasController@getByUser");
 Route::get("/pruebas/bymunicipio/{id}", "PruebasController@getByMunicipio");
 Route::get("/pruebas/bytipo/{id}", "PruebasController@getByTipo");
 Route::get("/pruebas/byresultado/{id}", "PruebasController@getByResultado");
+
+// After php artisan migrate:fresh --seed
+// Passport´s oauth tables will be wiped as well, so, to get passport to work again
+// Gotta run these commands to reinstall passport
+// php artisan passport:install --force
+// php artisan passport:client --personal
+// Client ID and Client Secret must be updated in .env file
+// After thar passport should be working again
