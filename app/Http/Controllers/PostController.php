@@ -16,7 +16,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        return Posts::all();
+        return Posts::with('categoria:id,categoria')->get();
     }
 
     /**

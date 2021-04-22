@@ -54,7 +54,8 @@ class PruebasController extends Controller
     }
 
     public function getByUser ($id) {
-        return P::where('usuario_id', $id)->get();
+        // return P::where('usuario_id', $id)->get();
+        return P::with(['tipo:id,tipo', 'resultado:id,resultado', 'municipio:id,municipio'])->get();
     }
 
     public function getByMunicipio ($id) {
