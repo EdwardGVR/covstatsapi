@@ -91,7 +91,7 @@ class PruebasController extends Controller
         P::where('id', $id)->update([
             "municipio_id" => $municipio_id,
             "tipo_id" => $tipo_id,
-            "resultado_id" => $resultado_id,
+            "resultado_id" => $resultado_id
         ]);
 
         return response()->json([
@@ -107,6 +107,10 @@ class PruebasController extends Controller
      */
     public function destroy($id)
     {
-        //
+        P::destroy($id);
+
+        return response()->json([
+            "msg" => "Prueba eliminada"
+        ], 200);
     }
 }
