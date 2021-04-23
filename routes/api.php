@@ -55,6 +55,8 @@ Route::get("/pruebas/byresultado/{id}", "PruebasController@getByResultado");
 
 Route::ApiResource("/gravedades", "GravedadesSintomasController");
 
+Route::ApiResource("/sintomas", "SintomasController");
+
 // After php artisan migrate:fresh --seed
 // Passport´s oauth tables will be wiped as well, so, to get passport to work again
 // Gotta run these commands to reinstall passport

@@ -15,6 +15,9 @@ class CreateSintomasTable extends Migration
     {
         Schema::create('sintomas', function (Blueprint $table) {
             $table->id();
+            $table->string('sintoma');
+            $table->string('descripcion');
+            $table->foreignId('gravedad_id')->constrained('gravedades_sintomas');
             $table->timestamps();
         });
     }

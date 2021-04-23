@@ -25,6 +25,8 @@ class DatabaseSeeder extends Seeder
         // $this->call(RolesSeeder::class);
         // $this->call(CategoriasSeeder::class);
 
-        $this->call(GravedadesSintomasSeeder::class);
+        // $this->call(GravedadesSintomasSeeder::class);
+
+        $this->call(SintomasSeeder::class);
     }
 }

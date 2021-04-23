@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Sintomas as S;
 
 class SintomasController extends Controller
 {
@@ -13,7 +14,7 @@ class SintomasController extends Controller
      */
     public function index()
     {
-        //
+        S::with(['gravedad:id,gravedad'])->get();
     }
 
     /**
