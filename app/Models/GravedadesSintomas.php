@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class GravedadesSintomas extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'gravedad',
+        'descripcion'
+    ];
 }
