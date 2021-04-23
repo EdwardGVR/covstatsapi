@@ -14,7 +14,7 @@ class SintomasController extends Controller
      */
     public function index()
     {
-        S::with(['gravedad:id,gravedad'])->get();
+        return S::with(['gravedad:id,gravedad'])->get();
     }
 
     /**
