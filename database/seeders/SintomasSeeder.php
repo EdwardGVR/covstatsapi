@@ -22,8 +22,8 @@ class SintomasSeeder extends Seeder
             ],
             [
                 "sintoma" => "Tos seca",
-                "descripcion" => "Toser sin expulsar mucosidad, sensación de irritación, cosquilleo y sequedad en la gargante
-                                , pecho despejado, sin congestión.",
+                "descripcion" => "Toser sin expulsar mucosidad, sensación de irritación, cosquilleo y sequedad en la garganta, 
+                                    pecho despejado, sin congestión.",
                 "gravedad_id" => 1
             ],
             [
