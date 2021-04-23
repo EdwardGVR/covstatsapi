@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\GravedadesSintomas as G;
 
 class GravedadesSintomasController extends Controller
 {
@@ -13,7 +14,7 @@ class GravedadesSintomasController extends Controller
      */
     public function index()
     {
-        //
+        G::all();
     }
 
     /**

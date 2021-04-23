@@ -15,6 +15,8 @@ class CreateGravedadesSintomasTable extends Migration
     {
         Schema::create('gravedades_sintomas', function (Blueprint $table) {
             $table->id();
+            $table->string('gravedad');
+            $table->string('descripcion');
             $table->timestamps();
         });
     }

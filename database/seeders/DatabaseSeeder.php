@@ -15,14 +15,16 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // \App\Models\User::factory(10)->create();
+        
         // $this->call(usersSeeder::class);
+        // $this->call(TiposPruebasSeeder::class);
+        // $this->call(ResultadosPruebasSeeder::class);
+        // $this->call(ZonasSeeder::class);
+        // $this->call(DepartamentosSeeder::class);
+        // $this->call(MunicipiosSeeder::class);
+        // $this->call(RolesSeeder::class);
+        // $this->call(CategoriasSeeder::class);
 
-        $this->call(TiposPruebasSeeder::class);
-        $this->call(ResultadosPruebasSeeder::class);
-        $this->call(ZonasSeeder::class);
-        $this->call(DepartamentosSeeder::class);
-        $this->call(MunicipiosSeeder::class);
-        $this->call(RolesSeeder::class);
-        $this->call(CategoriasSeeder::class);
+        $this->call(GravedadesSintomasSeeder::class);
     }
 }
