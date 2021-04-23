@@ -41,7 +41,11 @@ class MunicipiosController extends Controller
      */
     public function show($id)
     {
-        return Municipios::where('id', $id)->get();
+        // return Municipios::where('id', $id)->get();
+
+        return Municipios::with(['departamento:id,zona_id'])
+            ->where('id', '=', $id)
+            ->get();
     }
 
     /**
