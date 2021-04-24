@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\DetallesAutoevaluacion as D;
 
 class DetallesAutoevaluacionController extends Controller
 {
@@ -24,7 +25,18 @@ class DetallesAutoevaluacionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $autoevaluacion_id = $request->input('autoevaluacion_id');
+        $sintoma_id = $request->input('sintoma_id');
+
+        D::create([
+            "autoevaluacion_id" => $autoevaluacion_id,
+            "sintoma_id" => $sintoma_id
+        ]);
+
+        return response()->json([
+            "res" => true,
+            "msg" => "guardado correctamente"
+        ]);
     }
 
     /**
@@ -35,7 +47,11 @@ class DetallesAutoevaluacionController extends Controller
      */
     public function show($id)
     {
-        //
+        D::where('id', $id)->get();
+    }
+    
+    public function getbyautoeval ($id) {
+        return D::where('autoevaluacion_id', $id)->get();
     }
 
     /**
