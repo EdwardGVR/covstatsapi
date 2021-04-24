@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Autoevaluaciones as A;
 
 class AutoevaluacionesController extends Controller
 {
@@ -13,7 +14,7 @@ class AutoevaluacionesController extends Controller
      */
     public function index()
     {
-        //
+        
     }
 
     /**
@@ -24,7 +25,16 @@ class AutoevaluacionesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $usuario_id = $request->input('usuario_id');
+
+        A::create([
+            "usuario_id" => $usuario_id
+        ]);
+
+        return response()->json([
+            "res" => true,
+            "msg" => "Autoevaluación registrada"
+        ]);
     }
 
     /**
@@ -35,7 +45,11 @@ class AutoevaluacionesController extends Controller
      */
     public function show($id)
     {
-        //
+        return A::where('id', $id)->get();
+    }
+
+    public function getbyuser ($id) {
+        return A::where('usuario_id', $id)->get();
     }
 
     /**

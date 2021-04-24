@@ -15,6 +15,7 @@ class CreateAutoevaluacionesTable extends Migration
     {
         Schema::create('autoevaluaciones', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('usuario_id')->constrained('usuarios');
             $table->timestamps();
         });
     }
