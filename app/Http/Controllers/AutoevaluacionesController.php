@@ -52,6 +52,13 @@ class AutoevaluacionesController extends Controller
         return A::where('usuario_id', $id)->get();
     }
 
+    public function getmostrecentbyuser ($id) {
+        return A::where('usuario_id', $id)
+            ->orderBy('id', 'desc')
+            ->limit(1)
+            ->get();
+    }
+
     /**
      * Update the specified resource in storage.
      *
