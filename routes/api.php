@@ -63,6 +63,7 @@ Route::get("/autoevaluaciones/mostrecentbyuser/{id}", "AutoevaluacionesControlle
 
 Route::ApiResource("/detallesautoevaluaciones", "DetallesAutoevaluacionController");
 Route::get("/detallesautoevaluaciones/byautoeval/{id}", "DetallesAutoevaluacionController@getbyautoeval");
+Route::get("/detallesautoevaluaciones/sintomas/{id}", "DetallesAutoevaluacionController@getSintomas");
 
 // After php artisan migrate:fresh --seed
 // Passport´s oauth tables will be wiped as well, so, to get passport to work again

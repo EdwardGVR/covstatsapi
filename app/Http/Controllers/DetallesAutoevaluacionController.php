@@ -54,6 +54,12 @@ class DetallesAutoevaluacionController extends Controller
         return D::where('autoevaluacion_id', $id)->get();
     }
 
+    public function getSintomas ($id) {
+        return D::with('sintoma:id,gravedad_id')
+            ->where('autoevaluacion_id', $id)
+            ->get();
+    }
+
     /**
      * Update the specified resource in storage.
      *

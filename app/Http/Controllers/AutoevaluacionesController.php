@@ -49,7 +49,9 @@ class AutoevaluacionesController extends Controller
     }
 
     public function getbyuser ($id) {
-        return A::where('usuario_id', $id)->get();
+        return A::where('usuario_id', $id)
+            ->orderBy('id', 'desc')
+            ->get();
     }
 
     public function getmostrecentbyuser ($id) {

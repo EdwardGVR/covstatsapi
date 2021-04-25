@@ -16,7 +16,9 @@ class PostController extends Controller
      */
     public function index()
     {
-        return Posts::with('categoria:id,categoria')->get();
+        return Posts::with('categoria:id,categoria')
+            ->orderBy('id', 'desc')
+            ->get();
     }
 
     /**

@@ -60,6 +60,7 @@ class PruebasController extends Controller
 
         return P::with(['tipo:id,tipo', 'resultado:id,resultado', 'municipio:id,municipio'])
             ->where('usuario_id', '=', $id)
+            ->orderBy('id', 'desc')
             ->get();
     }
 
