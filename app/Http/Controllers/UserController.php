@@ -62,6 +62,7 @@ class UserController extends Controller
             return response()->json([
                 'res' => true,
                 'id_user' => $user->id,
+                'id_rol' => $user->rol_id,
                 'token' => $token,
                 'message' => 'Ingreso correcto'
             ], 200);

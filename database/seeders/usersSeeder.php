@@ -38,7 +38,7 @@ class usersSeeder extends Seeder
             "nombres" => "Edward",
             "apellidos" => "Guevara",
             "email" => "eddgvr@test.com",
-            "rol_id" => 1,
+            "rol_id" => 2,
             "municipio_id" => 124,
             "password" => 12345
         ]);

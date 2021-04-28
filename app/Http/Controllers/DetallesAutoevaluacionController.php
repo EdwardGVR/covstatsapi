@@ -55,7 +55,7 @@ class DetallesAutoevaluacionController extends Controller
     }
 
     public function getSintomas ($id) {
-        return D::with('sintoma:id,gravedad_id')
+        return D::with('sintoma:id,gravedad_id,sintoma,descripcion', 'sintoma.gravedad:id,gravedad')
             ->where('autoevaluacion_id', $id)
             ->get();
     }
