@@ -58,7 +58,7 @@ class PruebasController extends Controller
         
         // return P::with(['tipo:id,tipo', 'resultado:id,resultado', 'municipio:id,municipio'])->get();
 
-        return P::with(['tipo:id,tipo', 'resultado:id,resultado', 'municipio:id,municipio'])
+        return P::with(['tipo:id,tipo', 'resultado:id,resultado', 'municipio.departamento:id,departamento'])
             ->where('usuario_id', '=', $id)
             ->orderBy('id', 'desc')
             ->get();
