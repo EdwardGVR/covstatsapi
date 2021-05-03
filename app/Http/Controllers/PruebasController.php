@@ -73,7 +73,7 @@ class PruebasController extends Controller
     }
 
     public function getByResultado ($id) {
-        return P::where('resultado_id', $id)->get();
+        return P::where('resultado_id', $id)->count();
     }
 
     /**
