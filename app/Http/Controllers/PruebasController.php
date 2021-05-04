@@ -35,7 +35,7 @@ class PruebasController extends Controller
         ->Join('resultados_pruebas','resultados_pruebas.id','=','pruebas.resultado_id')
         ->Join('municipios','pruebas.municipio_id','=','municipios.id')
         ->Join('departamentos','municipios.departamento_id','=','departamentos.id')
-        ->where('departamentos.id',7)
+        ->where('departamentos.id',$id)
         ->select('resultados_pruebas.resultado',DB::raw('count(pruebas.resultado_id) AS cantidad'))
         ->groupBy('pruebas.resultado_id')
         ->get();
