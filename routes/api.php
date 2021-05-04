@@ -50,10 +50,10 @@ Route::ApiResource("/tipospruebas", "TiposPruebasController");
 // Routes without parameters should be placed before resource routes
 Route::get("/pruebas/byzona/{id}", "PruebasController@getByZona");
 Route::get("/pruebas/bydepartamento/{id}", "PruebasController@getByDepartamento");
+Route::get("/pruebas/bymunicipio/{id}", "PruebasController@getByMunicipio");
 
 Route::ApiResource("/pruebas", "PruebasController");
 Route::get("/pruebas/byuser/{id}", "PruebasController@getByUser");
-Route::get("/pruebas/bymunicipio/{id}", "PruebasController@getByMunicipio");
 Route::get("/pruebas/bytipo/{id}", "PruebasController@getByTipo");
 Route::get("/pruebas/byresultado/{id}", "PruebasController@getByResultado");
 
