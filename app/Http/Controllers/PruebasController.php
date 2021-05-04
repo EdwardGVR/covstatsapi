@@ -20,12 +20,13 @@ class PruebasController extends Controller
     
     public function getByZona($id) {
         return DB::table('pruebas')
+        ->Join('resultados_pruebas','resultados_pruebas.id','=','pruebas.resultado_id')
         ->Join('municipios','pruebas.municipio_id','=','municipios.id')
         ->Join('departamentos','municipios.departamento_id','=','departamentos.id')
         ->Join('zonas','departamentos.zona_id','=','zonas.id')
-        ->where('pruebas.resultado_id',$id)
-        ->select('zonas.zona',DB::raw('count(pruebas.resultado_id) AS cantidad'))
-        ->groupBy('departamentos.zona_id')
+        ->where('zonas.id',1)
+        ->select('zonas.zona','resultados_pruebas.resultado',DB::raw('count(pruebas.resultado_id) AS cantidad'))
+        ->groupBy('pruebas.resultado_id')
         ->get();
     }
 
