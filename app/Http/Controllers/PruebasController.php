@@ -30,6 +30,17 @@ class PruebasController extends Controller
         ->get();
     }
 
+    public function getByDepartamento($id) {
+        return DB::table('pruebas')
+        ->Join('resultados_pruebas','resultados_pruebas.id','=','pruebas.resultado_id')
+        ->Join('municipios','pruebas.municipio_id','=','municipios.id')
+        ->Join('departamentos','municipios.departamento_id','=','departamentos.id')
+        ->where('departamentos.id',7)
+        ->select('resultados_pruebas.resultado',DB::raw('count(pruebas.resultado_id) AS cantidad'))
+        ->groupBy('pruebas.resultado_id')
+        ->get();
+    }
+
     /**
      * Store a newly created resource in storage.
      *
