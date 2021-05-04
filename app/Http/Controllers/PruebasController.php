@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Models\Pruebas as P;
 
 class PruebasController extends Controller
@@ -15,6 +16,17 @@ class PruebasController extends Controller
     public function index()
     {
         return P::all();
+    }
+    
+    public function getByZona($id) {
+        return DB::table('pruebas')
+        ->Join('municipios','pruebas.municipio_id','=','municipios.id')
+        ->Join('departamentos','municipios.departamento_id','=','departamentos.id')
+        ->Join('zonas','departamentos.zona_id','=','zonas.id')
+        ->where('pruebas.resultado_id',$id)
+        ->select('zonas.zona',DB::raw('count(pruebas.resultado_id) AS cantidad'))
+        ->groupBy('departamentos.zona_id')
+        ->get();
     }
 
     /**
