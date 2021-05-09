@@ -50,6 +50,15 @@ class PruebasController extends Controller
         ->get();
     }
 
+
+    // Function to test Laravel Forge -> Digital Ocean Deploy
+    
+    // public function deployTest () {
+    //     return response()->json([
+    //         "message"=>"Deploy Succeeded"
+    //     ]);
+    // }
+
     /**
      * Store a newly created resource in storage.
      *
