@@ -24,9 +24,7 @@ class DatabaseSeeder extends Seeder
         $this->call(usersSeeder::class);
         $this->call(TiposPruebasSeeder::class);
         $this->call(ResultadosPruebasSeeder::class);
-
         $this->call(GravedadesSintomasSeeder::class);
-
         $this->call(SintomasSeeder::class);
     }
 }
