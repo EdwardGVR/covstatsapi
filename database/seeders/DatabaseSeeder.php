@@ -16,16 +16,16 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
         
-        // $this->call(usersSeeder::class);
-        // $this->call(TiposPruebasSeeder::class);
-        // $this->call(ResultadosPruebasSeeder::class);
-        // $this->call(ZonasSeeder::class);
-        // $this->call(DepartamentosSeeder::class);
-        // $this->call(MunicipiosSeeder::class);
-        // $this->call(RolesSeeder::class);
-        // $this->call(CategoriasSeeder::class);
+        $this->call(ZonasSeeder::class);
+        $this->call(DepartamentosSeeder::class);
+        $this->call(MunicipiosSeeder::class);
+        $this->call(CategoriasSeeder::class);
+        $this->call(RolesSeeder::class);
+        $this->call(usersSeeder::class);
+        $this->call(TiposPruebasSeeder::class);
+        $this->call(ResultadosPruebasSeeder::class);
 
-        // $this->call(GravedadesSintomasSeeder::class);
+        $this->call(GravedadesSintomasSeeder::class);
 
         $this->call(SintomasSeeder::class);
     }
